@@ -6,7 +6,7 @@
 #
 Name     : kdbusaddons
 Version  : 5.49.0
-Release  : 2
+Release  : 3
 URL      : https://download.kde.org/stable/frameworks/5.49/kdbusaddons-5.49.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.49/kdbusaddons-5.49.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.49/kdbusaddons-5.49.0.tar.xz.sig
@@ -19,6 +19,7 @@ Requires: kdbusaddons-license
 Requires: kdbusaddons-data
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
+BuildRequires : qtx11extras-dev
 
 %description
 # KDBusAddons
@@ -83,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534094458
+export SOURCE_DATE_EPOCH=1535427093
 mkdir clr-build
 pushd clr-build
 %cmake ..
@@ -91,7 +92,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1534094458
+export SOURCE_DATE_EPOCH=1535427093
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/kdbusaddons
 cp COPYING.LIB %{buildroot}/usr/share/doc/kdbusaddons/COPYING.LIB
@@ -154,6 +155,7 @@ popd
 /usr/share/locale/uk/LC_MESSAGES/kdbusaddons5_qt.qm
 /usr/share/locale/zh_CN/LC_MESSAGES/kdbusaddons5_qt.qm
 /usr/share/locale/zh_TW/LC_MESSAGES/kdbusaddons5_qt.qm
+/usr/share/xdg/kdbusaddons.categories
 
 %files dev
 %defattr(-,root,root,-)
