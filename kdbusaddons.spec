@@ -5,21 +5,20 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kdbusaddons
-Version  : 5.50.0
-Release  : 5
-URL      : https://download.kde.org/stable/frameworks/5.50/kdbusaddons-5.50.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.50/kdbusaddons-5.50.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.50/kdbusaddons-5.50.0.tar.xz.sig
+Version  : 5.51.0
+Release  : 6
+URL      : https://download.kde.org/stable/frameworks/5.51/kdbusaddons-5.51.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.51/kdbusaddons-5.51.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.51/kdbusaddons-5.51.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
-Requires: kdbusaddons-bin
-Requires: kdbusaddons-lib
-Requires: kdbusaddons-license
-Requires: kdbusaddons-data
+Requires: kdbusaddons-bin = %{version}-%{release}
+Requires: kdbusaddons-data = %{version}-%{release}
+Requires: kdbusaddons-lib = %{version}-%{release}
+Requires: kdbusaddons-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
-BuildRequires : qtx11extras-dev
 
 %description
 # KDBusAddons
@@ -31,8 +30,8 @@ create KDED modules.
 %package bin
 Summary: bin components for the kdbusaddons package.
 Group: Binaries
-Requires: kdbusaddons-data
-Requires: kdbusaddons-license
+Requires: kdbusaddons-data = %{version}-%{release}
+Requires: kdbusaddons-license = %{version}-%{release}
 
 %description bin
 bin components for the kdbusaddons package.
@@ -49,10 +48,10 @@ data components for the kdbusaddons package.
 %package dev
 Summary: dev components for the kdbusaddons package.
 Group: Development
-Requires: kdbusaddons-lib
-Requires: kdbusaddons-bin
-Requires: kdbusaddons-data
-Provides: kdbusaddons-devel
+Requires: kdbusaddons-lib = %{version}-%{release}
+Requires: kdbusaddons-bin = %{version}-%{release}
+Requires: kdbusaddons-data = %{version}-%{release}
+Provides: kdbusaddons-devel = %{version}-%{release}
 
 %description dev
 dev components for the kdbusaddons package.
@@ -61,8 +60,8 @@ dev components for the kdbusaddons package.
 %package lib
 Summary: lib components for the kdbusaddons package.
 Group: Libraries
-Requires: kdbusaddons-data
-Requires: kdbusaddons-license
+Requires: kdbusaddons-data = %{version}-%{release}
+Requires: kdbusaddons-license = %{version}-%{release}
 
 %description lib
 lib components for the kdbusaddons package.
@@ -77,25 +76,25 @@ license components for the kdbusaddons package.
 
 
 %prep
-%setup -q -n kdbusaddons-5.50.0
+%setup -q -n kdbusaddons-5.51.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536431658
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1539614465
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1536431658
+export SOURCE_DATE_EPOCH=1539614465
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/kdbusaddons
-cp COPYING.LIB %{buildroot}/usr/share/doc/kdbusaddons/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/kdbusaddons
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/kdbusaddons/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -183,8 +182,8 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5DBusAddons.so.5
-/usr/lib64/libKF5DBusAddons.so.5.50.0
+/usr/lib64/libKF5DBusAddons.so.5.51.0
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/kdbusaddons/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/kdbusaddons/COPYING.LIB
