@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kdbusaddons
-Version  : 5.51.0
-Release  : 7
-URL      : https://download.kde.org/stable/frameworks/5.51/kdbusaddons-5.51.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.51/kdbusaddons-5.51.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.51/kdbusaddons-5.51.0.tar.xz.sig
+Version  : 5.52.0
+Release  : 8
+URL      : https://download.kde.org/stable/frameworks/5.52/kdbusaddons-5.52.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.52/kdbusaddons-5.52.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.52/kdbusaddons-5.52.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -26,6 +26,14 @@ Convenience classes for D-Bus
 ## Introduction
 KDBusAddons provides convenience classes on top of QtDBus, as well as an API to
 create KDED modules.
+
+%package abi
+Summary: abi components for the kdbusaddons package.
+Group: Default
+
+%description abi
+abi components for the kdbusaddons package.
+
 
 %package bin
 Summary: bin components for the kdbusaddons package.
@@ -76,14 +84,14 @@ license components for the kdbusaddons package.
 
 
 %prep
-%setup -q -n kdbusaddons-5.51.0
+%setup -q -n kdbusaddons-5.52.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1539635737
+export SOURCE_DATE_EPOCH=1541866892
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -91,7 +99,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1539635737
+export SOURCE_DATE_EPOCH=1541866892
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kdbusaddons
 cp COPYING.LIB %{buildroot}/usr/share/package-licenses/kdbusaddons/COPYING.LIB
@@ -102,6 +110,10 @@ popd
 %files
 %defattr(-,root,root,-)
 
+%files abi
+%defattr(-,root,root,-)
+/usr/share/abi/libKF5DBusAddons.so.5.52.0.abi
+
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/kquitapp5
@@ -109,7 +121,6 @@ popd
 %files data
 %defattr(-,root,root,-)
 /usr/share/locale/ar/LC_MESSAGES/kdbusaddons5_qt.qm
-/usr/share/locale/ast/LC_MESSAGES/kdbusaddons5_qt.qm
 /usr/share/locale/bs/LC_MESSAGES/kdbusaddons5_qt.qm
 /usr/share/locale/ca/LC_MESSAGES/kdbusaddons5_qt.qm
 /usr/share/locale/ca@valencia/LC_MESSAGES/kdbusaddons5_qt.qm
@@ -182,7 +193,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5DBusAddons.so.5
-/usr/lib64/libKF5DBusAddons.so.5.51.0
+/usr/lib64/libKF5DBusAddons.so.5.52.0
 
 %files license
 %defattr(0644,root,root,0755)
