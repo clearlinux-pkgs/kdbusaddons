@@ -1,5 +1,5 @@
 PKG_NAME := kdbusaddons
-URL = https://download.kde.org/stable/frameworks/5.58/kdbusaddons-5.58.0.tar.xz
+URL = https://download.kde.org/stable/frameworks/5.59/kdbusaddons-5.59.0.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
