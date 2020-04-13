@@ -5,14 +5,14 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kdbusaddons
-Version  : 5.68.0
-Release  : 29
-URL      : https://download.kde.org/stable/frameworks/5.68/kdbusaddons-5.68.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.68/kdbusaddons-5.68.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.68/kdbusaddons-5.68.0.tar.xz.sig
+Version  : 5.69.0
+Release  : 30
+URL      : https://download.kde.org/stable/frameworks/5.69/kdbusaddons-5.69.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.69/kdbusaddons-5.69.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.69/kdbusaddons-5.69.0.tar.xz.sig
 Summary  : Addons to QtDBus
 Group    : Development/Tools
-License  : LGPL-2.1
+License  : LGPL-2.1 LGPL-3.0
 Requires: kdbusaddons-bin = %{version}-%{release}
 Requires: kdbusaddons-data = %{version}-%{release}
 Requires: kdbusaddons-lib = %{version}-%{release}
@@ -78,15 +78,15 @@ license components for the kdbusaddons package.
 
 
 %prep
-%setup -q -n kdbusaddons-5.68.0
-cd %{_builddir}/kdbusaddons-5.68.0
+%setup -q -n kdbusaddons-5.69.0
+cd %{_builddir}/kdbusaddons-5.69.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1584297194
+export SOURCE_DATE_EPOCH=1586812267
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -103,10 +103,11 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1584297194
+export SOURCE_DATE_EPOCH=1586812267
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kdbusaddons
-cp %{_builddir}/kdbusaddons-5.68.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kdbusaddons/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/kdbusaddons-5.69.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kdbusaddons/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/kdbusaddons-5.69.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kdbusaddons/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -195,8 +196,9 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5DBusAddons.so.5
-/usr/lib64/libKF5DBusAddons.so.5.68.0
+/usr/lib64/libKF5DBusAddons.so.5.69.0
 
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/kdbusaddons/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+/usr/share/package-licenses/kdbusaddons/e458941548e0864907e654fa2e192844ae90fc32
