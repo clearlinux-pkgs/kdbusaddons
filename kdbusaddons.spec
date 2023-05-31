@@ -7,7 +7,7 @@
 #
 Name     : kdbusaddons
 Version  : 5.106.0
-Release  : 68
+Release  : 69
 URL      : https://download.kde.org/stable/frameworks/5.106/kdbusaddons-5.106.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.106/kdbusaddons-5.106.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.106/kdbusaddons-5.106.0.tar.xz.sig
@@ -92,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684802106
+export SOURCE_DATE_EPOCH=1685567531
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -125,7 +125,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1684802106
+export SOURCE_DATE_EPOCH=1685567531
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kdbusaddons
 cp %{_builddir}/kdbusaddons-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kdbusaddons/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
@@ -209,7 +209,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5DBusAddons.so
 /usr/include/KF5/KDBusAddons/KDBusConnectionPool
 /usr/include/KF5/KDBusAddons/KDBusInterProcessLock
 /usr/include/KF5/KDBusAddons/KDBusService
@@ -235,7 +234,6 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5DBusAddons.so.5
 /V3/usr/lib64/libKF5DBusAddons.so.5.106.0
 /usr/lib64/libKF5DBusAddons.so.5
 /usr/lib64/libKF5DBusAddons.so.5.106.0
