@@ -1,39 +1,7 @@
-libKF6DBusAddons.so.6:KDEDModule::qt_metacall(QMetaObject::Call, int, void**)
-libKF6DBusAddons.so.6:KDEDModule::qt_metacast(char const*)
-libKF6DBusAddons.so.6:KDEDModule::setModuleName(QString const&)
-libKF6DBusAddons.so.6:KDEDModule::moduleForMessage(QDBusMessage const&)
-libKF6DBusAddons.so.6:KDEDModule::moduleRegistered(QDBusObjectPath const&)
-libKF6DBusAddons.so.6:KDEDModule::windowRegistered(long long)
-libKF6DBusAddons.so.6:KDEDModule::windowUnregistered(long long)
-libKF6DBusAddons.so.6:KDEDModule::KDEDModule(QObject*)
-libKF6DBusAddons.so.6:KDEDModule::KDEDModule(QObject*)
-libKF6DBusAddons.so.6:KDEDModule::~KDEDModule()
-libKF6DBusAddons.so.6:KDEDModule::~KDEDModule()
-libKF6DBusAddons.so.6:KDEDModule::~KDEDModule()
-libKF6DBusAddons.so.6:KDBusService::unregister()
-libKF6DBusAddons.so.6:KDBusService::qt_metacall(QMetaObject::Call, int, void**)
-libKF6DBusAddons.so.6:KDBusService::qt_metacast(char const*)
 libKF6DBusAddons.so.6:KDBusService::setExitValue(int)
-libKF6DBusAddons.so.6:KDBusService::openRequested(QList<QUrl> const&)
-libKF6DBusAddons.so.6:KDBusService::activateRequested(QList<QString> const&, QString const&)
-libKF6DBusAddons.so.6:KDBusService::activateActionRequested(QString const&, QVariant const&)
-libKF6DBusAddons.so.6:KDBusService::KDBusService(QFlags<KDBusService::StartupOption>, QObject*)
-libKF6DBusAddons.so.6:KDBusService::KDBusService(QFlags<KDBusService::StartupOption>, QObject*)
+libKF6DBusAddons.so.6:KDBusService::unregister()
 libKF6DBusAddons.so.6:KDBusService::~KDBusService()
-libKF6DBusAddons.so.6:KDBusService::~KDBusService()
-libKF6DBusAddons.so.6:KDBusService::~KDBusService()
-libKF6DBusAddons.so.6:KUpdateLaunchEnvironmentJob::qt_metacall(QMetaObject::Call, int, void**)
-libKF6DBusAddons.so.6:KUpdateLaunchEnvironmentJob::qt_metacast(char const*)
+libKF6DBusAddons.so.6:KDEDModule::KDEDModule(QObject*)
+libKF6DBusAddons.so.6:KDEDModule::~KDEDModule()
 libKF6DBusAddons.so.6:KUpdateLaunchEnvironmentJob::finished()
-libKF6DBusAddons.so.6:KUpdateLaunchEnvironmentJob::KUpdateLaunchEnvironmentJob(QProcessEnvironment const&)
-libKF6DBusAddons.so.6:KUpdateLaunchEnvironmentJob::KUpdateLaunchEnvironmentJob(QProcessEnvironment const&)
 libKF6DBusAddons.so.6:KUpdateLaunchEnvironmentJob::~KUpdateLaunchEnvironmentJob()
-libKF6DBusAddons.so.6:KUpdateLaunchEnvironmentJob::~KUpdateLaunchEnvironmentJob()
-libKF6DBusAddons.so.6:KUpdateLaunchEnvironmentJob::~KUpdateLaunchEnvironmentJob()
-libKF6DBusAddons.so.6:KDEDModule::metaObject() const
-libKF6DBusAddons.so.6:KDEDModule::moduleName() const
-libKF6DBusAddons.so.6:KDBusService::metaObject() const
-libKF6DBusAddons.so.6:KDBusService::serviceName() const
-libKF6DBusAddons.so.6:KDBusService::errorMessage() const
-libKF6DBusAddons.so.6:KDBusService::isRegistered() const
-libKF6DBusAddons.so.6:KUpdateLaunchEnvironmentJob::metaObject() const
